@@ -2,7 +2,12 @@
 <html>
 <head>
     <title>Customer Registration Page</title>
+    <link rel="stylesheet" type="text/css" href="./CSS/Jahid.css">
+
+
+
 </head>
+
 <body>
     
     <h1>E-Camera Shop</h1>
