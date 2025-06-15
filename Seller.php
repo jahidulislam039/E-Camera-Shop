@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Seller Registration Page</title>
+    <link rel="stylesheet" type="text/css" href="./CSS/chayan.css">
 </head>
 <body>
     <h1>E-Camera Shop</h1>
