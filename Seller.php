@@ -58,5 +58,6 @@
         </table>
     </form>
     </fieldset>
+    <script src="./Script/chayan.js"></script>
 </body>
 </html>
