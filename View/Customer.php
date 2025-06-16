@@ -1,5 +1,4 @@
 <?php
-// filepath: View/Customer.php
 include("../Control/register_validation.php");
 ?>
 <!DOCTYPE html>

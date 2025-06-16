@@ -1,15 +1,12 @@
 <?php
-// filepath: View/dashboard.php
 session_start();
 require_once("../Model/db.php");
 
-// Check if user is logged in
 if (!isset($_SESSION["user_id"])) {
     header("Location: login.php");
     exit();
 }
 
-// Fetch user info from database
 $user_id = $_SESSION["user_id"];
 $sql = "SELECT Name, Email, Dob, Gender FROM customer WHERE ID = ?";
 $stmt = $conn->prepare($sql);
