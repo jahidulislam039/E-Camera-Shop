@@ -1,5 +1,4 @@
 <?php
-// filepath: View/login.php
 include("../Control/login_validation.php");
 ?>
 <!DOCTYPE html>

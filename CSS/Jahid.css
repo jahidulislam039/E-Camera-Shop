@@ -90,7 +90,6 @@ form table {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for the login link/button below the form */
 .login-link-container {
     text-align: center;
     margin-top: 20px;
@@ -111,7 +110,6 @@ form table {
     background-color: #219150;
 }
 
-/* Dashboard styles */
 .dashboard-container {
     background: #fff;
     max-width: 500px;

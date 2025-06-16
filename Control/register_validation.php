@@ -8,7 +8,7 @@ $success = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hasError = false;
 
-    // Name validation
+    
     if (empty($_POST["cname"])) {
         $nameErr = "Full Name is required";
         $hasError = true;
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $conn->real_escape_string(htmlspecialchars(trim($_POST["cname"])));
     }
 
-    // Email validation
+    
     if (empty($_POST["cemail"])) {
         $emailErr = "Email is required";
         $hasError = true;
@@ -25,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hasError = true;
     } else {
         $email = $conn->real_escape_string(htmlspecialchars(trim($_POST["cemail"])));
-        // Check if email already exists
         $checkEmail = $conn->query("SELECT id FROM customer WHERE email='$email'");
         if ($checkEmail && $checkEmail->num_rows > 0) {
             $emailErr = "Email already registered";
@@ -33,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Password validation
     if (empty($_POST["cpassword"]) || strlen(trim($_POST["cpassword"])) < 6) {
         $passErr = "Password must be at least 6 characters";
         $hasError = true;
@@ -41,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = password_hash(trim($_POST["cpassword"]), PASSWORD_DEFAULT);
     }
 
-    // DOB validation
     if (empty($_POST["cDOB"])) {
         $dobErr = "Date of Birth is required";
         $hasError = true;
@@ -49,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dob = $conn->real_escape_string(htmlspecialchars(trim($_POST["cDOB"])));
     }
 
-    // Gender validation
+    
     if (empty($_POST["cgender"])) {
         $genderErr = "Gender is required";
         $hasError = true;
@@ -57,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $gender = $conn->real_escape_string(htmlspecialchars(trim($_POST["cgender"])));
     }
 
-    // If no errors, insert into database
     if (!$hasError) {
         $sql = "INSERT INTO customer (Name, Email, Password, DOB, Gender) VALUES ('$name', '$email', '$password', '$dob', '$gender')";
         if ($conn->query($sql) === TRUE) {
